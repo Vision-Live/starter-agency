@@ -1,24 +1,18 @@
 <script lang="ts">
 	import '../app.css';
-	import Navbar from '$lib/Navbar.svelte';
-	import { session } from '../stores/session';
+	import Navbar from '$lib/navbar.svelte';
 
 
 </script>
 
-<header class="{ $session.darkMode ? 'dark': '' }">
+<header class="container mx-auto">
 	<Navbar />
 </header>
 
 <main>
-	<!-- Page Pontent -->
-    <div class="{ $session.darkMode ? 'dark': '' }">
-        <div class="dark:bg-main-dark bg-slate-400 transition-colors duration-300">
-            <slot/>
-        </div>
-    </div>
+	<slot/>
 </main>
 
-<footer class="{ $session.darkMode ? 'dark': '' }">
+<footer class="">
 	<!-- Page Footer -->
 </footer>
