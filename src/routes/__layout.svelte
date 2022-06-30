@@ -1,18 +1,19 @@
 <script lang="ts">
 	import '../app.css';
 	import Navbar from '$lib/navbar.svelte';
-
-
+	import Footer from '$lib/footer.svelte';
 </script>
 
-<header class="container mx-auto">
-	<Navbar />
-</header>
+<div class="flex flex-col h-screen justify-between">
+	<header class="container mx-auto relative">
+		<Navbar />
+	</header>
 
-<main>
-	<slot/>
-</main>
+	<main>
+		<slot />
+	</main>
 
-<footer class="">
-	<!-- Page Footer -->
-</footer>
+	<footer>
+		<Footer />
+	</footer>
+</div>

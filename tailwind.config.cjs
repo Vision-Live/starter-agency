@@ -10,6 +10,5 @@ module.exports = {
   daisyui: {
     theme: ["night", "emerald"],
     darkTheme: "night",
-    lightTheme: "emerald",
   },
 }
