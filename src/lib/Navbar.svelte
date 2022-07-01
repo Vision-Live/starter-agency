@@ -22,7 +22,7 @@
 		$session.isDrawerOpen = false;
 	};
 </script>
-<div class="drawer fixed h-screen">
+<div class="drawer absolute h-screen">
 	<input id="my-drawer-3" type="checkbox" bind:checked={$session.isDrawerOpen} class="drawer-toggle" />
 	<div class="drawer-content flex flex-col">
 		<!-- Navbar -->
