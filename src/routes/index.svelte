@@ -1,5 +1,11 @@
-<div class="w-sceen">
-    <h1 class="text-2xl font-bold mb-4 text-center">
-        <span class="text-red-500">Am</span><span class="text-blue-500">Vestor</span>
-    </h1>
-</div>
+<script lang="ts">
+import Hero from "$lib/Sections/hero.svelte";
+let homeHero = {
+    title: "Beautiful, Secure & Marketable web development",
+    subtitle: "We are a team of developers who love to build beautiful, websites & web applications for Small & Medium sized businesses. Technology is transforming the way we work, engage, and service our clients.",
+    link: "/"
+    };
+
+</script>
+
+<Hero title={homeHero.title} subtitle={homeHero.subtitle} link={homeHero.link} />

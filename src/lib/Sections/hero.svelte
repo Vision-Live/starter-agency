@@ -1,0 +1,17 @@
+<script lang="ts">
+	export let title: string; // Headline title to use
+	export let subtitle: string; // Subtitle to use
+    export let link: string; // Description to use
+</script>
+
+<hero class="w-screen text-center">
+  <div class="prose lg:prose-xl px-8 sm:px-16">
+    <h1>{title}</h1>
+    <p>{subtitle}</p>
+  </div>
+  <div class="mx-auto">
+		<button class="btn btn-primary btn-wide mt-8 items-center">
+			<a href={link}>Get Started</a>
+		</button>
+	</div>
+</hero>
