@@ -38,9 +38,6 @@
 					</a>
 				</li>
 			</ul>
-			<div class="ml-6">
-				<ThemeChanger />
-			</div>
 		</div>
 	</div>
 </div>

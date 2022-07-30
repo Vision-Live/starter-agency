@@ -6,7 +6,7 @@
     // export let link: string; // Description to use
 </script>
 
-<hero class="w-screen text-center">
+<hero class="w-screen text-center flex flex-col items-center">
   <div class="prose lg:prose-xl px-8 sm:px-16">
     <h1>{title}</h1>
     <p>{subtitle}</p>

@@ -16,16 +16,16 @@
 
 	let error = '';
 
-	const login = async () => {
+	const signup = async () => {
 		error = '';
-		const response = await fetch('/api/login', {
+		const response = await fetch('/api/signup', {
 			method: 'POST',
 			body: JSON.stringify({
 				username,
 				password
 			})
 		});
-		if (response.ok) return (window.location.href = '/profile');
+		if (response.ok) return (window.location.href = '/app/dashboard');
 		const result = await response.json();
 		error = result.error;
 	};
@@ -69,10 +69,11 @@
 						</div>
 					</div>
 					<div>
-						<button on:click={login} class="flex justify-center w-full btn btn-primary mt-8"> Sign in </button>
+						<button on:click={signup} class="flex justify-center w-full btn btn-primary mt-8"> Sign in </button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
