@@ -4,18 +4,18 @@ import type { Error } from 'lucia-sveltekit'
 
 export const POST: RequestHandler = async ({ request }) => {
 	const body = await request.json()
-	const username = body.username
+	const email = body.email
 	const password = body.password
-	if (!username || !password) {
+	if (!email || !password) {
 		return {
 			status: 400
 		}
 	}
 	try {
-		const createUser = await auth.createUser('username', username, {
+		const createUser = await auth.createUser('email', email, {
 			password,
 			user_data: {
-				username
+				email
 			}
 		})
 		return {
@@ -30,7 +30,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			return {
 				status: 400,
 				body: JSON.stringify({
-					error: 'Username already taken'
+					error: 'email already taken'
 				})
 			}
 		}

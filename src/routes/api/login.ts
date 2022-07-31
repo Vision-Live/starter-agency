@@ -4,15 +4,15 @@ import type { Error } from 'lucia-sveltekit'
 
 export const POST: RequestHandler = async ({ request }) => {
 	const body = await request.json()
-	const username = body.username
+	const email = body.email
 	const password = body.password
-	if (!username || !password) {
+	if (!email || !password) {
 		return {
 			status: 400
 		}
 	}
 	try {
-		const authenticateUser = await auth.authenticateUser('username', username, password)
+		const authenticateUser = await auth.authenticateUser('email', email, password)
 		return {
 			status: 200,
 			headers: {

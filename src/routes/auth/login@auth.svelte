@@ -3,14 +3,14 @@
 		if (!session.lucia) return
 		return {
 			status: 302,
-			redirect: '/'
+			redirect: '/app/dashboard'
 		}
 	}
 </script>
 
 <script lang="ts">
 	import type { Load } from '@sveltejs/kit'
-	let username: string
+	let email: string
 	let password: string
 
 	let error = ''
@@ -20,7 +20,7 @@
 		const response = await fetch('/api/login', {
 			method: 'POST',
 			body: JSON.stringify({
-				username,
+				email,
 				password
 			})
 		})
@@ -49,8 +49,8 @@
 				<div class="space-y-5">
 					<div class="form-control w-full">
 						<label class="input-group my-4">
-							<span for="username" class="w-24 bg-base-100">username</span>
-							<input type="text" id="username" placeholder="username" bind:value={username} class="input input-bordered" />
+							<span for="email" class="w-24 bg-base-100">email</span>
+							<input type="text" id="email" placeholder="daniel@example.com" bind:value={email} class="input input-bordered" />
 						</label>
 					</div>
 					<div class="form-control w-full">

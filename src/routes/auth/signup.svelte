@@ -11,9 +11,11 @@
 </script>
 
 <script lang="ts">
-	let username: string
+	let email: string
 	let password: string
-
+	let dburl: string = import.meta.env.VITE_SUPA_URL
+	let dbname: string = import.meta.env.VITE_SUPA_SECRET
+	let luciasecret = import.meta.env.VITE_LUCIA_SECRET
 	let error = ''
 
 	const signup = async () => {
@@ -21,7 +23,7 @@
 		const response = await fetch('/api/signup', {
 			method: 'POST',
 			body: JSON.stringify({
-				username,
+				email,
 				password
 			})
 		})
@@ -49,8 +51,8 @@
 				<div class="space-y-5">
 					<div class="form-control w-full">
 						<label class="input-group my-4">
-							<span for="username" class="w-24 bg-base-100">username</span>
-							<input type="text" id="username" placeholder="username" bind:value={username} class="input input-bordered" />
+							<span for="email" class="w-24 bg-base-100">email</span>
+							<input type="text" id="email" placeholder="daniel@example.com" bind:value={email} class="input input-bordered" />
 						</label>
 					</div>
 					<div class="form-control w-full">
