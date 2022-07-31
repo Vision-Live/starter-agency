@@ -17,4 +17,4 @@ export default {
 		es2017: true,
 		node: true
 	}
-};
+}

@@ -6,7 +6,9 @@
 declare namespace App {
 	// interface Locals {}
 	// interface Platform {}
-	// interface Session {}
+	interface Session {
+		lucia: import('lucia-sveltekit/types').SvelteKitSession<{ username: string }>
+	}
 	// interface Stuff {}
 }
-declare module 'theme-change';
+declare module 'theme-change'

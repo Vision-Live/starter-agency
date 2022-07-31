@@ -1,34 +1,34 @@
 <script lang="ts" context="module">
-	import type { Load } from '@sveltejs/kit';
-
 	export const load: Load = async ({ session }) => {
-		if (!session.lucia) return;
+		if (!session.lucia) return
 		return {
 			status: 302,
-			redirect: '/app/dashboard'
-		};
-	};
+			redirect: '/'
+		}
+	}
 </script>
 
 <script lang="ts">
-	let username: string;
-	let password: string;
+	import type { Load } from '@sveltejs/kit'
+	let username: string
+	let password: string
 
-	let error = '';
+	let error = ''
 
 	const login = async () => {
-		error = '';
+		error = ''
 		const response = await fetch('/api/login', {
 			method: 'POST',
 			body: JSON.stringify({
 				username,
 				password
 			})
-		});
-		if (response.ok) return (window.location.href = '/profile');
-		const result = await response.json();
-		error = result.error;
-	};
+		})
+		if (response.ok) return (window.location.href = '/app/dashboard')
+		const result = await response.json()
+		error = result.error
+		console.log(error)
+	}
 </script>
 
 <div class="bg-no-repeat bg-cover bg-center relative transition-all duration-300">
@@ -50,10 +50,10 @@
 					<div class="form-control w-full">
 						<label class="input-group my-4">
 							<span for="username" class="w-24 bg-base-100">username</span>
-							<input type="text" id="username" placeholder="mrmedez" bind:value={username} class="input input-bordered" />
+							<input type="text" id="username" placeholder="username" bind:value={username} class="input input-bordered" />
 						</label>
 					</div>
-                    <div class="form-control w-full">
+					<div class="form-control w-full">
 						<label class="input-group mb-4">
 							<span for="password" class="w-24 bg-base-100">Password</span>
 							<input type="password" id="password" bind:value={password} placeholder="* * * * * * * *" class="input input-bordered" />
@@ -65,7 +65,7 @@
 							<label for="remember_me" class="ml-2 block text-sm "> Remember me </label>
 						</div>
 						<div class="text-sm">
-							<a href="" class=" "> Forgot your password? </a>
+							<a href="/" class=" "> Forgot your password? </a>
 						</div>
 					</div>
 					<div>

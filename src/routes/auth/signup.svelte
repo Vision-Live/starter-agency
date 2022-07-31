@@ -1,34 +1,34 @@
 <script lang="ts" context="module">
-	import type { Load } from '@sveltejs/kit';
+	import type { Load } from '@sveltejs/kit'
 
 	export const load: Load = async ({ session }) => {
-		if (!session.lucia) return;
+		if (!session.lucia) return
 		return {
 			status: 302,
 			redirect: '/app/dashboard'
-		};
-	};
+		}
+	}
 </script>
 
 <script lang="ts">
-	let username: string;
-	let password: string;
+	let username: string
+	let password: string
 
-	let error = '';
+	let error = ''
 
 	const signup = async () => {
-		error = '';
+		error = ''
 		const response = await fetch('/api/signup', {
 			method: 'POST',
 			body: JSON.stringify({
 				username,
 				password
 			})
-		});
-		if (response.ok) return (window.location.href = '/app/dashboard');
-		const result = await response.json();
-		error = result.error;
-	};
+		})
+		if (response.ok) return (window.location.href = '/app/dashboard')
+		const result = await response.json()
+		error = result.error
+	}
 </script>
 
 <div class="bg-no-repeat bg-cover bg-center relative transition-all duration-300">
@@ -43,17 +43,17 @@
 		<div class="card card-compact p-4 bg-base-300 mx-8 shadow-xl ">
 			<div class="card-body">
 				<div class="mb-4">
-					<h3 class="card-title">Sign In</h3>
-					<p>Please sign in to your account.</p>
+					<h3 class="card-title">Sign up</h3>
+					<p>Create your account.</p>
 				</div>
 				<div class="space-y-5">
 					<div class="form-control w-full">
 						<label class="input-group my-4">
 							<span for="username" class="w-24 bg-base-100">username</span>
-							<input type="text" id="username" placeholder="mrmedez" bind:value={username} class="input input-bordered" />
+							<input type="text" id="username" placeholder="username" bind:value={username} class="input input-bordered" />
 						</label>
 					</div>
-                    <div class="form-control w-full">
+					<div class="form-control w-full">
 						<label class="input-group mb-4">
 							<span for="password" class="w-24 bg-base-100">Password</span>
 							<input type="password" id="password" bind:value={password} placeholder="* * * * * * * *" class="input input-bordered" />
@@ -69,11 +69,10 @@
 						</div>
 					</div>
 					<div>
-						<button on:click={signup} class="flex justify-center w-full btn btn-primary mt-8"> Sign in </button>
+						<button on:click={signup} class="flex justify-center w-full btn btn-primary mt-8"> Create Account </button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-

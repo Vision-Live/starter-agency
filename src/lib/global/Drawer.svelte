@@ -1,13 +1,13 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <script lang="ts">
-	import { clickOutside } from '$lib/utils/click_outside';
-	import { session } from '../../stores/session';
-	import { LayoutDashboard, Box, Settings } from 'lucide-svelte';
-	import ThemeChanger from './ThemeChanger.svelte';
+	import { clickOutside } from '$lib/utils/click_outside'
+	import { session } from '../../stores/session'
+	import { LayoutDashboard, Box, Settings } from 'lucide-svelte'
+	import ThemeChanger from './ThemeChanger.svelte'
 
 	let closeDrawer = () => {
-		$session.isDrawerOpen = false;
-	};
+		$session.isDrawerOpen = false
+	}
 </script>
 
 <!-- svelte-ignore a11y-invalid-attribute -->

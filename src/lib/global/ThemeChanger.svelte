@@ -1,26 +1,26 @@
 <script lang="ts">
-	import { session } from '../../stores/session';
-	import { onMount } from 'svelte';
-	import { themeChange } from 'theme-change';
+	import { session } from '../../stores/session'
+	import { onMount } from 'svelte'
+	import { themeChange } from 'theme-change'
 
-    import { Moon, Sun } from 'lucide-svelte';
+	import { Moon, Sun } from 'lucide-svelte'
 
 	onMount(() => {
-		themeChange(false);
-		let dataTheme = window.document.documentElement.getAttribute('data-theme');
+		themeChange(false)
+		let dataTheme = window.document.documentElement.getAttribute('data-theme')
 		if (dataTheme == 'night') {
-			$session.darkMode = true;
+			$session.darkMode = true
 		}
-	});
+	})
 
 	const toggleDarkMode = () => {
-		$session.darkMode = !$session.darkMode;
-	};
+		$session.darkMode = !$session.darkMode
+	}
 
 	let closeDrawer = () => {
-		$session.isDrawerOpen = false;
-	};
-	let theme = ['night', 'emerald'];
+		$session.isDrawerOpen = false
+	}
+	let theme = ['night', 'emerald']
 </script>
 
 <button on:click={toggleDarkMode} data-toggle-theme={theme} class="btn sm:btn-sm btn-sm relative mr-4 sm:mr-4 overflow-hidden">
