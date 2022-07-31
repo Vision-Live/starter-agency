@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-export const session = writable({
+export const ui = writable({
 	isDrawerOpen: false,
 	darkMode: true
 })

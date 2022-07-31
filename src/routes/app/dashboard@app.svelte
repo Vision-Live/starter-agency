@@ -1,17 +1,6 @@
-<script lang="ts" context="module">
-	export const load: Load = async ({ session }) => {
-		if (session.lucia) return
-		return {
-			status: 302,
-			redirect: '/'
-		}
-	}
-</script>
-
 <script lang="ts">
 	import { signOut } from 'lucia-sveltekit/client'
 	import { session } from '$app/stores'
-	import type { Load } from '@sveltejs/kit'
 
 	const signOutUser = async () => {
 		try {
@@ -32,8 +21,11 @@
 		const result = await response.json()
 		number = result.number
 	}
+
+	const user = $session.lucia?.user
 </script>
 
 <div class="flex flex-col items-center">
-	<h1 class="prose lg:prose-lg">Dashboard</h1>
+	<h1 class="prose lg:prose-lg">{user?.email}</h1>
+	<h1 class="prose lg:prose-lg">{user?.email}</h1>
 </div>

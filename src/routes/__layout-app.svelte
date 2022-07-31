@@ -1,9 +1,19 @@
+<script lang="ts" context="module">
+	export const load: Load = async ({ session }) => {
+		if (session.lucia) return
+		return {
+			status: 302,
+			redirect: '/auth/login'
+		}
+	}
+</script>
 
 <script lang="ts">
 	import '../app.css'
 	import Footer from '$lib/footer.svelte'
 	import Navbar from '$lib/global/Navbar.svelte'
 
+	import type { Load } from '@sveltejs/kit'
 	import { autoRefreshTokens } from 'lucia-sveltekit/client'
 	import { session } from '$app/stores'
 	import { onDestroy } from 'svelte'
