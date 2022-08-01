@@ -14,7 +14,7 @@
 		</div>
 	{/if}
 	<div class="navbar-start">
-		<a href="" class="btn btn-ghost text-2xl font-bold text-center normal-case mx-2"><span class="text-red-500">Am</span><span class="text-blue-500">Vestor</span></a>
+		<a href="/" class="btn btn-ghost text-2xl font-bold text-center normal-case mx-2"><span class="text-red-500">Am</span><span class="text-blue-500">Vestor</span></a>
 	</div>
 	<div class="flex-none navbar-center hidden lg:block">
 		<ul class="menu menu-horizontal p-0">

@@ -3,8 +3,10 @@
 	import '../app.css'
 	import Footer from '$lib/footer.svelte'
 	import Navbar from '$lib/global/Navbar.svelte'
+	import { page } from '$app/stores'
+	import Transition from '$lib/global/Transition.svelte'
 
-	import { autoRefreshTokens } from 'lucia-sveltekit/client'
+	import { autoRefreshTokens } from  	'lucia-sveltekit/client'
 	import { session } from '$app/stores'
 	import { onDestroy } from 'svelte'
 	import Drawer from '$lib/global/Drawer.svelte'
@@ -24,7 +26,9 @@
 	</header>
 
 	<main>
-		<slot />
+		<Transition url={$page.url}>
+			<slot />
+		</Transition>
 	</main>
 
 	<footer>
